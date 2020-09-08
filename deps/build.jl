@@ -26,6 +26,9 @@ catch err
     @warn "unable to download may be a windows machine firewall.. , set latestVersion_CoolProp = $latestVersion_CoolProp";
 end
 # latestVersion_CoolProp = JSON.parse(read(download("https://sourceforge.net/projects/coolprop/best_release.json"), String))["release"]["filename"][11:15]; 
+
+latestVersion_CoolProp = "6.3.0"
+
 coolpropurlbase = "http://netix.dl.sourceforge.net/project/coolprop/CoolProp/$latestVersion_CoolProp/";
 
 (branchname == "nightly") && (global coolpropurlbase = "http://www.coolprop.dreamhosters.com/binaries/");
