@@ -5,7 +5,8 @@ const OS_ARCH_CoolProp = (Sys.WORD_SIZE == 64) ? "64bit" : (Sys.iswindows() ? "3
 const destpathbase = abspath(@__FILE__, "..", "lib");
 
 # const branchname = LibGit2.branch(LibGit2.GitRepo(abspath(@__FILE__, "..", "..")));
-const branchname = "master"
+const branchname = "nightly"
+
 @info "On $branchname";
 latestVersion_CoolProp = "";
 _download(s, d) = isfile(d) ? throw("file exists ...") : begin
