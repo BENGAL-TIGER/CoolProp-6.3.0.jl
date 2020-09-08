@@ -5,7 +5,7 @@ const OS_ARCH_CoolProp = (Sys.WORD_SIZE == 64) ? "64bit" : (Sys.iswindows() ? "3
 const destpathbase = abspath(@__FILE__, "..", "lib");
 
 # const branchname = LibGit2.branch(LibGit2.GitRepo(abspath(@__FILE__, "..", "..")));
-const branchname = "nightly"
+const branchname = "master"
 
 @info "On $branchname";
 latestVersion_CoolProp = "";
@@ -22,10 +22,10 @@ end
 try
     latestVersion_CoolProp = JSON.parse(read(download("https://sourceforge.net/projects/coolprop/best_release.json"), String))["release"]["filename"][11:15];  
 catch err
-    latestVersion_CoolProp = "6.1.0";
+    latestVersion_CoolProp = "6.3.0";
     @warn "unable to download may be a windows machine firewall.. , set latestVersion_CoolProp = $latestVersion_CoolProp";
 end
-latestVersion_CoolProp = JSON.parse(read(download("https://sourceforge.net/projects/coolprop/best_release.json"), String))["release"]["filename"][11:15]; 
+# latestVersion_CoolProp = JSON.parse(read(download("https://sourceforge.net/projects/coolprop/best_release.json"), String))["release"]["filename"][11:15]; 
 coolpropurlbase = "http://netix.dl.sourceforge.net/project/coolprop/CoolProp/$latestVersion_CoolProp/";
 
 (branchname == "nightly") && (global coolpropurlbase = "http://www.coolprop.dreamhosters.com/binaries/");
