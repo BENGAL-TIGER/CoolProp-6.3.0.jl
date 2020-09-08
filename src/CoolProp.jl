@@ -1,5 +1,5 @@
 #__precompile__()
-module CoolPropNightly
+module CoolProp
 
 using Compat
 import Libdl
